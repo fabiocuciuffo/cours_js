@@ -29,6 +29,7 @@ const prenoms = ['Romain', 'Jeanne', 'Malik', 'Satsuki'];
 prenoms[0]; // Romain
 prenoms.length; // 4
 prenoms[prenoms.length - 1]; // Satsuki
+prenoms.at(-1); // Satsuki
 
 prenoms.includes('Malik'); // true
 ```
