@@ -2,3 +2,4 @@ node_modules
 bundle.js
 touitter
 *_correction
+.DS_Store
