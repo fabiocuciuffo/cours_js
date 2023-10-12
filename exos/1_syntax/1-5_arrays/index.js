@@ -61,4 +61,4 @@ console.log('*** [Bonus] Pokemons ***');
 /**
  * 1) Trouvez toutes les types uniques de Pokemons à partir du tableau de données pokemons
  */
-import { pokemons } from '../../utils/index.js';
+// import { pokemons } from '../../utils/index.js';
