@@ -100,3 +100,13 @@ layout: statement
 ---
 
 ![Fonction](/assets/function.png){.mx-auto .mt-16 .h-75}
+
+---
+layout: statement
+---
+
+# Document Object Model
+
+---
+
+![DOM](/assets/dom.png){.mx-auto .mt-16 .h-75}
