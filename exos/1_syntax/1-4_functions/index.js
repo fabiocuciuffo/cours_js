@@ -69,9 +69,8 @@ console.log("*** 1000 ***")
  */
 
 function sommeDiff(min, max) {
-  min = min
   let result = 0
-  for (let i = min; i >= max; i++) {
+  for (let i = min; i < max; i++) {
     result += i
     console.log(result, i)
   }
