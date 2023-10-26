@@ -1,10 +1,10 @@
-'use strict';
-console.log('Exos 1-4: Fonctions');
+"use strict"
+console.log("Exos 1-4: Fonctions")
 
 /**========================================================================
  *                           Bonjour
  *========================================================================**/
-console.log('*** Bonjour ***');
+console.log("*** Bonjour ***")
 
 /**
  * 1) Créer une fonction 'direBonjour' qui:
@@ -17,7 +17,7 @@ console.log('*** Bonjour ***');
 /**========================================================================
  *                           Somme
  *========================================================================**/
-console.log('*** Somme ***');
+console.log("*** Somme ***")
 
 /**
  * 1) Créer une fonction 'somme' qui:
@@ -30,7 +30,7 @@ console.log('*** Somme ***');
 /**========================================================================
  *                           Pourcentage
  *========================================================================**/
-console.log('*** Pourcentage ***');
+console.log("*** Pourcentage ***")
 
 /**
  * 1) Créez une fonction "calculer" qui:
@@ -48,7 +48,7 @@ console.log('*** Pourcentage ***');
 /**========================================================================
  *                           1000
  *========================================================================**/
-console.log('*** 1000 ***');
+console.log("*** 1000 ***")
 
 /**
  * Créer une fonction qui:
@@ -60,7 +60,7 @@ console.log('*** 1000 ***');
 /**========================================================================
  *                           [Bonus] Limite
  *========================================================================**/
-console.log('*** [Bonus] Limite ***');
+console.log("*** [Bonus] Limite ***")
 
 /**
  * 1) Créer une fonction 'limit' qui:
@@ -83,9 +83,9 @@ console.log('*** [Bonus] Limite ***');
 /**========================================================================
  *                           [Bonus] Say Hello
  *========================================================================**/
-console.log('*** [Bonus] Say Hello ***');
+console.log("*** [Bonus] Say Hello ***")
 
-const languages = ['fr', 'es', 'de', 'it', 'jp'];
+const languages = ["fr", "es", "de", "it", "jp"]
 
 /**
  * 1) Créer une fonction 'prepareHello' qui prend en entrée une langue 'lang' ('fr', 'it', 'es', 'de', ...)
@@ -101,27 +101,68 @@ const languages = ['fr', 'es', 'de', 'it', 'jp'];
  *                           [Bonus++] Récursion
  *========================================================================**/
 const tree = {
-  value: 1,
-  children: [
-    {
-      value: 2,
-      children: [
-        { value: 3, children: [] },
-        { value: 4, children: [] }
-      ]
-    },
-    {
-      value: 5,
-      children: [
-        { value: 6, children: [] },
-        { value: 7, children: [] }
-      ]
-    },
-    {
-      value: 8
+    value: 1,
+    children: [
+        {
+            value: 2,
+            children: [
+                { value: 3, children: [] },
+                { value: 4, children: [] },
+            ],
+        },
+        {
+            value: 5,
+            children: [
+                { value: 6, children: [] },
+                { value: 7, children: [] },
+            ],
+        },
+        {
+            value: 8,
+        },
+    ],
+}
+
+// function sumTreeValues(variable) {
+//     let result = 0
+//     if (variable.value != undefined) {
+//         result += variable.value
+//     }
+//     if (variable.children != undefined) {
+//         variable.children.forEach((child) => {
+//             if (child.value != undefined) {
+//                 result += child.value
+//             }
+//             if (child.children != undefined) {
+//                 child.children.forEach((childBis) => {
+//                     if (childBis != undefined) {
+//                         result += childBis.value
+//                     }
+//                     if (childBis.children != undefined) {
+//                         childBis.children.forEach((childTer) => {
+//                             if (childTer.value != undefined) {
+//                                 result += childTer.value
+//                             }
+//                         })
+//                     }
+//                 })
+//             }
+//         })
+//     }
+//     return result
+// }
+
+function sumTreeValues(tree) {
+    let result = tree.value
+    if (tree.children != undefined && tree.children.length > 0) {
+        for (const child of tree.children) {
+            result += sumTreeValues(child)
+        }
     }
-  ]
-};
+    return result
+}
+
+console.log(sumTreeValues(tree))
 
 /**
  * 1) Créer une fonction sumTreeValues qui prend en entrée une structure comme la variable tree
