@@ -30,6 +30,20 @@ const speeds = [23, 12, 57, 178, 129, 434, 222, 1000, 59, 887, 134];
  * Si le résultat est supérieur à 130, logguer 'Vous allez trop vite !'
  */
 
+// for(let i = 0; i <speeds.length; i++){
+//     console.log(speeds[i])
+// }
+function moins5(number){
+    return number - 5
+}
+
+speeds.forEach(element => {
+    console.log(moins5(element))
+    if(element > 130){
+        console.log('Vous allez trop vite !')
+    }
+});
+
 /**========================================================================
  *                           Conversions
  *========================================================================**/
@@ -41,6 +55,18 @@ console.log('*** Conversions ***');
  * 3) Même chose, en utilisant .map().
  */
 const kmHtoms = 1000 / 3600; // conversion de km/h à m/s
+let tableau = speeds.map(element => (element * 1000) / 3600)
+// for (let i = 0; i < speeds.length; i++) {
+//     tableau.push((speeds[i] * kmHtoms )
+// }
+
+// for (const iterator of speeds) {
+//     tableau.push( (iterator * kmHtoms )
+// }
+
+
+
+console.log(tableau)
 
 /**
  * 4) Créez un tableau filtré (avec .filter) avec uniquement les vitesses en km/h supérieures à 130 km/h
@@ -61,4 +87,4 @@ console.log('*** [Bonus] Pokemons ***');
 /**
  * 1) Trouvez toutes les types uniques de Pokemons à partir du tableau de données pokemons
  */
-import { pokemons } from '../../utils/index.js';
+// import { pokemons } from '../../utils/index.js';

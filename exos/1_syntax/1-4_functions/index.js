@@ -14,6 +14,10 @@ console.log('*** Bonjour ***');
  * 2) Utiliser cette fonction avec votre prénom en logguant son résultat
  */
 
+function direBonjour(nom){
+    
+}
+
 /**========================================================================
  *                           Somme
  *========================================================================**/
