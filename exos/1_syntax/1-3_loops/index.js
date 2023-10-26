@@ -59,11 +59,14 @@ let nombreOperations = 0;
 //     nombreOperations++
 //     console.log(nombreOperations)
 // }
-console.log(argent / cout);
-for (argent; argent >= cout; argent = argent - cout) {
-  console.log(argent);
-}
+// console.log(argent / cout);
+// for (argent; argent >= cout; argent = argent - cout) {
+//   console.log(argent);
+// }
 
+argent = argent - cout * Math.floor(argent / cout);
+
+console.log(argent);
 /**========================================================================
  *                           [Bonus] Mastercard
  *========================================================================**/

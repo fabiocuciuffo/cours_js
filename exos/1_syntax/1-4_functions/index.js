@@ -1,10 +1,10 @@
-'use strict';
-console.log('Exos 1-4: Fonctions');
+"use strict"
+console.log("Exos 1-4: Fonctions")
 
 /**========================================================================
  *                           Bonjour
  *========================================================================**/
-console.log('*** Bonjour ***');
+console.log("*** Bonjour ***")
 
 /**
  * 1) Créer une fonction 'direBonjour' qui:
@@ -14,14 +14,12 @@ console.log('*** Bonjour ***');
  * 2) Utiliser cette fonction avec votre prénom en logguant son résultat
  */
 
-function direBonjour(nom){
-    
-}
+function direBonjour(nom) {}
 
 /**========================================================================
  *                           Somme
  *========================================================================**/
-console.log('*** Somme ***');
+console.log("*** Somme ***")
 
 /**
  * 1) Créer une fonction 'somme' qui:
@@ -31,10 +29,14 @@ console.log('*** Somme ***');
  * 2) Utiliser cette fonction sur deux nombres de votre choix
  */
 
+function somme(nombre1, nombre2) {
+  return nombre1 + nombre2
+}
+
 /**========================================================================
  *                           Pourcentage
  *========================================================================**/
-console.log('*** Pourcentage ***');
+console.log("*** Pourcentage ***")
 
 /**
  * 1) Créez une fonction "calculer" qui:
@@ -49,10 +51,15 @@ console.log('*** Pourcentage ***');
  * 3) Modifier la fonction "calculer" pour pouvoir choisir également le pourcentage appliqué
  */
 
+function calculer(nombre, pourcentage) {
+  return nombre * (1 + pourcentage / 100)
+}
+
+console.log(calculer(200, 100))
 /**========================================================================
  *                           1000
  *========================================================================**/
-console.log('*** 1000 ***');
+console.log("*** 1000 ***")
 
 /**
  * Créer une fonction qui:
@@ -61,10 +68,21 @@ console.log('*** 1000 ***');
  * - utiliser une boucle for
  */
 
+function sommeDiff(min, max) {
+  min = min
+  let result = 0
+  for (let i = min; i >= max; i++) {
+    result += i
+    console.log(result, i)
+  }
+  return result
+}
+
+console.log(sommeDiff(2, 5))
 /**========================================================================
  *                           [Bonus] Limite
  *========================================================================**/
-console.log('*** [Bonus] Limite ***');
+console.log("*** [Bonus] Limite ***")
 
 /**
  * 1) Créer une fonction 'limit' qui:
@@ -87,9 +105,9 @@ console.log('*** [Bonus] Limite ***');
 /**========================================================================
  *                           [Bonus] Say Hello
  *========================================================================**/
-console.log('*** [Bonus] Say Hello ***');
+console.log("*** [Bonus] Say Hello ***")
 
-const languages = ['fr', 'es', 'de', 'it', 'jp'];
+const languages = ["fr", "es", "de", "it", "jp"]
 
 /**
  * 1) Créer une fonction 'prepareHello' qui prend en entrée une langue 'lang' ('fr', 'it', 'es', 'de', ...)

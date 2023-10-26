@@ -1,12 +1,12 @@
-'use strict';
-console.log('Exos 1-5: Tableaux');
+"use strict"
+console.log("Exos 1-5: Tableaux")
 
 /**========================================================================
  *                           Pop 'n Push
  *========================================================================**/
-console.log("*** Pop 'n Push ***");
+console.log("*** Pop 'n Push ***")
 
-const nombres = [5, 6, 1, 2, 3, 4, 7];
+const nombres = [5, 6, 1, 2, 3, 4, 7]
 /**
  * 1) Enlevez des éléments de 'nombres' pour ne garder que [1, 2, 3]
  * 2) Ajoutez des éléments dans 'nombres' pour faire [0, 1, 2, 3, 4, 5, 6]
@@ -15,9 +15,9 @@ const nombres = [5, 6, 1, 2, 3, 4, 7];
 /**========================================================================
  *                           A7
  *========================================================================**/
-console.log('*** A7 ***');
+console.log("*** A7 ***")
 
-const speeds = [23, 12, 57, 178, 129, 434, 222, 1000, 59, 887, 134];
+const speeds = [23, 12, 57, 178, 129, 434, 222, 1000, 59, 887, 134]
 
 /**
  * 1) Logguez chacune des valeurs du tableau speeds dans la console avec une boucle for
@@ -33,29 +33,29 @@ const speeds = [23, 12, 57, 178, 129, 434, 222, 1000, 59, 887, 134];
 // for(let i = 0; i <speeds.length; i++){
 //     console.log(speeds[i])
 // }
-function moins5(number){
-    return number - 5
+function moins5(number) {
+  return number - 5
 }
 
-speeds.forEach(element => {
-    console.log(moins5(element))
-    if(element > 130){
-        console.log('Vous allez trop vite !')
-    }
-});
+speeds.forEach((element) => {
+  console.log(moins5(element))
+  if (element > 130) {
+    console.log("Vous allez trop vite !")
+  }
+})
 
 /**========================================================================
  *                           Conversions
  *========================================================================**/
-console.log('*** Conversions ***');
+console.log("*** Conversions ***")
 
 /**
  * 1) Créez un nouveau tableau avec les vitesses en m/s, en utilisant une boucle for.
  * 2) Même chose, en utilisant une boucle for of.
  * 3) Même chose, en utilisant .map().
  */
-const kmHtoms = 1000 / 3600; // conversion de km/h à m/s
-let tableau = speeds.map(element => (element * 1000) / 3600)
+const kmHtoms = 1000 / 3600 // conversion de km/h à m/s
+let tableau = speeds.map((element) => (element * 1000) / 3600)
 // for (let i = 0; i < speeds.length; i++) {
 //     tableau.push((speeds[i] * kmHtoms )
 // }
@@ -63,8 +63,6 @@ let tableau = speeds.map(element => (element * 1000) / 3600)
 // for (const iterator of speeds) {
 //     tableau.push( (iterator * kmHtoms )
 // }
-
-
 
 console.log(tableau)
 
@@ -77,14 +75,16 @@ console.log(tableau)
  * 6) Utilisez cette fonction pour créer un tableau des vitesses en noeuds
  */
 
-const ndTokmH = 1.852; // 1 noeud vaut 1.852 km/h
+const ndTokmH = 1.852 // 1 noeud vaut 1.852 km/h
 
 /**========================================================================
  *                           [Bonus] Pokemons
  *========================================================================**/
-console.log('*** [Bonus] Pokemons ***');
+console.log("*** [Bonus] Pokemons ***")
 
 /**
  * 1) Trouvez toutes les types uniques de Pokemons à partir du tableau de données pokemons
  */
-// import { pokemons } from '../../utils/index.js';
+import { pokemons } from "../../utils/index.js"
+
+console.log(pokemon)
