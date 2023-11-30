@@ -63,19 +63,19 @@ layout: statement
 
 ---
 
-# Conditions
+# Conditions (if-else)
 
 ![if](/assets/if.png){.mx-auto .mt-16 .w-100}
 
 ---
 
-# Conditions
+# Conditions (if-else)
 
 ![if-else](/assets/if-else.png){.mx-auto .mt-16 .w-100}
 
 ---
 
-# Conditions
+# Conditions (switch)
 
 ![switch](/assets/switch.png){.mx-auto .mt-8 .h-100}
 
@@ -90,3 +90,23 @@ layout: statement
 # Boucle while
 
 ![while](/assets/while.png){.mx-auto .mt-16 .w-100}
+
+---
+layout: statement
+---
+
+# Fonctions
+
+---
+
+![Fonction](/assets/function.png){.mx-auto .mt-16 .h-75}
+
+---
+layout: statement
+---
+
+# Document Object Model
+
+---
+
+![DOM](/assets/dom.png){.mx-auto .mt-16 .h-75}

@@ -117,3 +117,78 @@ const languages = ["fr", "es", "de", "it", "jp"]
  * 2) Utiliser "prepareHello" pour créer plusieurs fonctions pour dire bonjour dans plusieurs langues
  * 3) Tester les fonctions créées
  */
+
+/**========================================================================
+ *                           [Bonus++] Récursion
+ *========================================================================**/
+const tree = {
+    value: 1,
+    children: [
+        {
+            value: 2,
+            children: [
+                { value: 3, children: [] },
+                { value: 4, children: [] },
+            ],
+        },
+        {
+            value: 5,
+            children: [
+                { value: 6, children: [] },
+                { value: 7, children: [] },
+            ],
+        },
+        {
+            value: 8,
+        },
+    ],
+}
+
+// function sumTreeValues(variable) {
+//     let result = 0
+//     if (variable.value != undefined) {
+//         result += variable.value
+//     }
+//     if (variable.children != undefined) {
+//         variable.children.forEach((child) => {
+//             if (child.value != undefined) {
+//                 result += child.value
+//             }
+//             if (child.children != undefined) {
+//                 child.children.forEach((childBis) => {
+//                     if (childBis != undefined) {
+//                         result += childBis.value
+//                     }
+//                     if (childBis.children != undefined) {
+//                         childBis.children.forEach((childTer) => {
+//                             if (childTer.value != undefined) {
+//                                 result += childTer.value
+//                             }
+//                         })
+//                     }
+//                 })
+//             }
+//         })
+//     }
+//     return result
+// }
+
+function sumTreeValues(tree) {
+    let result = tree.value
+    if (tree.children != undefined && tree.children.length > 0) {
+        for (const child of tree.children) {
+            result += sumTreeValues(child)
+        }
+    }
+    return result
+}
+
+console.log(sumTreeValues(tree))
+
+/**
+ * 1) Créer une fonction sumTreeValues qui prend en entrée une structure comme la variable tree
+ * et retourne le calcul de la somme des "values".
+ * 2) Vérifiez le résultat :
+ *  const totalSum = sumTreeValues(tree);
+    console.log(totalSum === 36); // true
+ */
