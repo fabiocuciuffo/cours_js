@@ -6,11 +6,15 @@ console.log("Exos 1-5: Tableaux")
  *========================================================================**/
 console.log("*** Pop 'n Push ***")
 
-const nombres = [5, 6, 1, 2, 3, 4, 7]
+let nombres = [5, 6, 1, 2, 3, 4, 7]
 /**
  * 1) Enlevez des éléments de 'nombres' pour ne garder que [1, 2, 3]
  * 2) Ajoutez des éléments dans 'nombres' pour faire [0, 1, 2, 3, 4, 5, 6]
  */
+
+nombres = nombres.filter((el) => el < 4)
+nombres = nombres.concat([4, 5, 6])
+console.log(nombres)
 
 /**========================================================================
  *                           A7
@@ -34,14 +38,14 @@ const speeds = [23, 12, 57, 178, 129, 434, 222, 1000, 59, 887, 134]
 //     console.log(speeds[i])
 // }
 function moins5(number) {
-  return number - 5
+    return number - 5
 }
 
 speeds.forEach((element) => {
-  console.log(moins5(element))
-  if (element > 130) {
-    console.log("Vous allez trop vite !")
-  }
+    console.log(moins5(element))
+    if (element > 130) {
+        console.log("Vous allez trop vite !")
+    }
 })
 
 /**========================================================================
@@ -85,6 +89,6 @@ console.log("*** [Bonus] Pokemons ***")
 /**
  * 1) Trouvez toutes les types uniques de Pokemons à partir du tableau de données pokemons
  */
-import { pokemons } from "../../utils/index.js"
+// import { pokemons } from "../../utils/index.js"
 
-console.log(pokemon)
+// console.log(pokemons)

@@ -1,10 +1,10 @@
-'use strict';
-console.log('Exos 3-3: Évènements');
+"use strict"
+console.log("Exos 3-3: Évènements")
 
 /**========================================================================
  *                           Couleurs
  *========================================================================**/
-console.log('*** Couleurs ***');
+console.log("*** Couleurs ***")
 
 /**
  * 1) Créez une <div> pour chaque couleur, avec la class 'color'
@@ -16,20 +16,34 @@ console.log('*** Couleurs ***');
  */
 
 const colors = [
-  'white',
-  'blue',
-  'red',
-  'green',
-  'black',
-  'grey',
-  'orange',
-  'purple',
-];
+    "white",
+    "blue",
+    "red",
+    "green",
+    "black",
+    "grey",
+    "orange",
+    "purple",
+]
+
+const exo1 = document.getElementById("exo1")
+
+for (const index in colors) {
+    const color = colors[index]
+    const div = document.createElement("div")
+    div.classList.add("color")
+    div.style.backgroundColor = color
+    div.textContent = `${index}. ${color}`
+    div.addEventListener("click", (e) => {
+        document.body.style.backgroundColor = div.style.backgroundColor
+    })
+    exo1.appendChild(div)
+}
 
 /**========================================================================
  *                           Taille
  *========================================================================**/
-console.log('*** Taille ***');
+console.log("*** Taille ***")
 
 /**
  * 1) Créez une <section> avec l'id 'exo2', et l'ajouter au body
@@ -38,10 +52,19 @@ console.log('*** Taille ***');
  * en fonction de la position en Y de la souris à l'écran (event.clientY)
  */
 
+const exo2 = document.createElement("section")
+exo2.style.margin = "auto"
+exo2.setAttribute("id", "2")
+document.body.appendChild(exo2)
+exo2.addEventListener("mousemove", (e) => {
+    exo2.style.width = `${e.clientY}px`
+    exo2.style.height = `${e.clientY}px`
+})
+
 /**========================================================================
  *                           Nom
  *========================================================================**/
-console.log('*** Nom ***');
+console.log("*** Nom ***")
 
 /**
  * 1) Créez une <section> avec l'id 'exo3', et l'ajouter au body
@@ -49,10 +72,18 @@ console.log('*** Nom ***');
  * 3) Lui ajouter un listener au input, qui change le 'textContent' du '<h1>' pour y mettre le contenu de l'input
  */
 
+const exo3 = document.createElement("section")
+exo3.setAttribute("id", "exo3")
+document.body.appendChild(exo3)
+exo3.appendChild(document.createElement("input"))
+exo3.firstChild.addEventListener("keyup", () => {
+    document.querySelector("h1").textContent = exo3.firstChild.value
+})
+
 /**========================================================================
  *                           Clavier
  *========================================================================**/
-console.log('*** Clavier ***');
+console.log("*** Clavier ***")
 
 /**
  * 1) Faire en sorte de changer la couleur du background du body quand on appuie sur 1, 2, 3...
@@ -62,10 +93,37 @@ console.log('*** Clavier ***');
  * 3) Exécutez chacun des 3 premiers exercices lorsque la page est vide en appuyant sur ENTER
  */
 
+function changeColor(keyPressed) {
+    keyPressed = parseInt(keyPressed)
+    if (typeof keyPressed === "number") {
+        document.body.style.backgroundColor = colors[keyPressed]
+    }
+}
+
+function returnBase(keyPressed) {
+    if (keyPressed.key == "r" && keyPressed.ctrlKey === true) {
+        exo2.style.display = "none"
+        exo3.style.display = "none"
+    }
+}
+
+function comebackCurrent(keyPressed) {
+    if (keyPressed.key === "Enter") {
+        exo2.style.display = "flex"
+        exo3.style.display = "flex"
+    }
+}
+
+document.addEventListener("keyup", (e) => {
+    changeColor(e.key)
+    returnBase(e)
+    comebackCurrent(e)
+})
+
 /**========================================================================
  *                           [Bonus] Harry Potter
  *========================================================================**/
-console.log('*** [Bonus] Harry Potter ***');
+console.log("*** [Bonus] Harry Potter ***")
 
 /**
  * 1) Créez une <section> avec l'id 'exoBonus', et l'ajouter au body
@@ -79,28 +137,28 @@ console.log('*** [Bonus] Harry Potter ***');
  */
 
 const characters = [
-  {
-    name: 'Harry',
-    src: 'static/Harry_Potter_character_poster.jpeg',
-  },
-  {
-    name: 'Hermione',
-    src: 'static/Hermione_Granger_poster.jpeg',
-  },
-  {
-    name: 'Ron',
-    src: 'static/Ron_Weasley_poster.jpeg',
-  },
-  {
-    name: 'Sirius',
-    src: 'static/Sirius_Black.jpeg',
-  },
-  {
-    name: 'Rubeus',
-    src: 'static/RubeusHagrid.jpeg',
-  },
-  {
-    name: 'Albus',
-    src: 'static/Dumbledore_and_Elder_Wand.jpeg',
-  },
-];
+    {
+        name: "Harry",
+        src: "static/Harry_Potter_character_poster.jpeg",
+    },
+    {
+        name: "Hermione",
+        src: "static/Hermione_Granger_poster.jpeg",
+    },
+    {
+        name: "Ron",
+        src: "static/Ron_Weasley_poster.jpeg",
+    },
+    {
+        name: "Sirius",
+        src: "static/Sirius_Black.jpeg",
+    },
+    {
+        name: "Rubeus",
+        src: "static/RubeusHagrid.jpeg",
+    },
+    {
+        name: "Albus",
+        src: "static/Dumbledore_and_Elder_Wand.jpeg",
+    },
+]

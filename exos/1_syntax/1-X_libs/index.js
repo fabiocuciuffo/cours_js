@@ -1,10 +1,10 @@
-'use strict';
-console.log('Exos 1-6: Libs');
+"use strict"
+console.log("Exos 1-6: Libs")
 
 /**========================================================================
  *                           Aléatoire
  *========================================================================**/
-console.log('*** Aléatoire ***');
+console.log("*** Aléatoire ***")
 
 /**
  * 1) Créer une fonction 'lanceDés' qui renvoie un nombre entre 1 et 6.
@@ -21,55 +21,54 @@ console.log('*** Aléatoire ***');
  * 3) Modifier la fonction "lanceDés" pour pouvoir choisir la taille du dé (limites inférieures et supérieures)
  */
 
-function lanceDes(numberMin, numberMax){
-  let x = Math.floor(Math.random() *numberMax)
-  while(x < numberMin){
-    x = Math.floor(Math.random() *numberMax)
-  }
-  return x
+function lanceDes(numberMin, numberMax) {
+    let x = Math.floor(Math.random() * numberMax)
+    while (x < numberMin) {
+        x = Math.floor(Math.random() * numberMax)
+    }
+    return x
 }
 
 /**========================================================================
  *                           Noms
  *========================================================================**/
-console.log('*** Noms ***');
+console.log("*** Noms ***")
 
 /**
  * 1) Sur le modèle de Romain, ajoutez 2 ou 3 personnes au tableaux "personnes", en utilisant .push()
  */
 const romain = {
-  nom: 'Romain',
-  date: '1985-12-31',
-};
+    nom: "Romain",
+    date: "1985-12-31",
+}
 const fabio = {
-  nom: 'Fabio',
-  date: '2002-01-08'
+    nom: "Fabio",
+    date: "2002-01-08",
 }
 const julie = {
-  nom: 'Julie',
-  date: '2001-02-04'
+    nom: "Julie",
+    date: "2001-02-04",
 }
-const personnes = [romain];
+const personnes = [romain]
 personnes.push(fabio, julie)
 
-const personnesMin = personnes.map(element => element.nom.toLowerCase())
-const personnesDat = personnes.map(element => new Date(element.date).getFullYear())
-
-
-
+const personnesMin = personnes.map((element) => element.nom.toLowerCase())
+const personnesDat = personnes.map((element) =>
+    new Date(element.date).getFullYear()
+)
 
 console.log(personnesMin)
 console.log(personnesDat)
 
-function calculerAge(dateDeNaissance){
-  dateDeNaissance = new Date(dateDeNaissance)
-  //faire la différence entre la date actuelle et la date de naissance
-  let age = new Date() - dateDeNaissance
-  age = Math.ceil(age / 1000 / 60 / 60 / 24 / 365) - 1
-  return age
+function calculerAge(dateDeNaissance) {
+    dateDeNaissance = new Date(dateDeNaissance)
+    //faire la différence entre la date actuelle et la date de naissance
+    let age = new Date() - dateDeNaissance
+    age = Math.ceil(age / 1000 / 60 / 60 / 24 / 365) - 1
+    return age
 }
 
-const personnesAge = personnes.map(element => calculerAge(element.date))
+const personnesAge = personnes.map((element) => calculerAge(element.date))
 
 console.log(personnesAge)
 
@@ -98,7 +97,7 @@ console.log(personnesAge)
 /**========================================================================
  *                           [Bonus] Mot de passe
  *========================================================================**/
-console.log('*** [Bonus] Mot de passe ***');
+console.log("*** [Bonus] Mot de passe ***")
 
 /**
  * 1) En utilisant la fonction "lanceDés", créez une fonction `getLetter`
@@ -106,11 +105,11 @@ console.log('*** [Bonus] Mot de passe ***');
  * Vous pouvez utiliser la string "letters".
  */
 
-const letters = 'abcdefghijklmnopqrstuvwxyz';
+const letters = "abcdefghijklmnopqrstuvwxyz"
 
-function getLetter(){
-  let x = lanceDes(0, letters.length)
-  return letters[x]
+function getLetter() {
+    let x = lanceDes(0, letters.length)
+    return letters[x]
 }
 
 /**
@@ -121,12 +120,12 @@ function getLetter(){
  * Utiliser une boucle for et la fonction "getLetter".
  */
 
-function makePassword(size){
-  let mdp = ''
-  while(mdp.length < size){
-    mdp = mdp + getLetter()
-  }
-  return mdp
+function makePassword(size) {
+    let mdp = ""
+    while (mdp.length < size) {
+        mdp = mdp + getLetter()
+    }
+    return mdp
 }
 
 console.log(makePassword(20))
@@ -140,21 +139,25 @@ console.log(makePassword(20))
  * Si 'size' est plus petit que 8, logguer un message d'avertissement, mais créer le password quand même.
  */
 
-function makeStrongerPassword(size, withNumbers){
-  let mdp = ''
-  if(withNumbers == true){
-    while(mdp.length < size){
-      mdp = mdp + getLetter()
-      if(mdp.length < size){
-        mdp = mdp + Math.floor(Math.random() * 9).toString()
-      }
+function makeStrongerPassword(size, withNumbers) {
+    let mdp = ""
+    if (withNumbers == true) {
+        while (mdp.length < size) {
+            mdp = mdp + getLetter()
+            if (mdp.length < size) {
+                mdp = mdp + Math.floor(Math.random() * 9).toString()
+            }
+        }
+    } else {
+        while (mdp.length < size) {
+            mdp = mdp + getLetter()
+        }
     }
-  } else {
-    while(mdp.length < size){
-      mdp = mdp + getLetter()
+    if (size < 8) {
+        console.log("Password trop court")
     }
-  }
-  return mdp
+    return mdp
 }
 
 console.log(makeStrongerPassword(15, true))
+console.log(makeStrongerPassword(6, true))
